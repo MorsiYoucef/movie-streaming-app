@@ -2,7 +2,7 @@ import bcrypt from 'bcryptjs';
 import dotenv from 'dotenv'
 import { User } from '../models/User.js'
 import { generateTokenAndSetCookie } from '../utils/generateTokenAndSetCookie.js';
-import { SendOtpEmail } from '../mailtrap/sendEmail.js';
+import { SendOtpEmail, sendPasswordResetEmail } from '../mailtrap/sendEmail.js';
 import crypto from 'crypto'
 
 dotenv.config()
@@ -151,8 +151,6 @@ export const resetPassword = async (req, res) => {
         user.resetPasswordToken = undefined;
         user.resetPasswordExpiresAt = undefined;
         await user.save();
-
-        await sendResetSuccessEmail(user.email);
 
         res.status(200).json({ success: true, message: "Password reset successful" });
     } catch (error) {

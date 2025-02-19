@@ -11,4 +11,5 @@ export const ENV_VARS = {
     SMPT_PASS : process.env.SMPT_PASS,
     SMPT_HOST: process.env.SMPT_HOST,
     SMPT_PORT: process.env.SMPT_PORT,
+    TMDB_API_KEY: process.env.TMDB_API_KEY
 }
