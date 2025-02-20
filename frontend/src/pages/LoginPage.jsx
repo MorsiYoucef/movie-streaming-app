@@ -1,13 +1,24 @@
 import { Link } from "react-router-dom"
 import { useState } from "react";
+import { useAuthStore } from "@/store/authUser";
+import toast from "react-hot-toast";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 
+  const { login } = useAuthStore()
+  // const navigate = useNavigate()
+
   const handleLogin = (e) => {
 		e.preventDefault();
-		console.log({ email, password });
+    try {
+      login({ email, password });
+      // navigate('/')
+    } catch (error) {
+      toast.error(error.message)
+    }
+		
 	};
   
   return (

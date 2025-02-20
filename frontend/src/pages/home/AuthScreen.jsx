@@ -1,13 +1,14 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react";
 import { ChevronRight } from "lucide-react";
-import Footer from "../../components/Footer";
 
 function AuthScreen() {
     const [email, setEmail] = useState("");
+    const navigate = useNavigate()
 
     const handleFormSubmit = (e) => {
-        setEmail(e.target.value);
+        e.preventDefault()
+        navigate('/signup?email=' +email)
     };
 
     return (
@@ -170,7 +171,6 @@ function AuthScreen() {
                     </div>
                 </div>
             </div>
-            <Footer />
         </div>
     )
 }
