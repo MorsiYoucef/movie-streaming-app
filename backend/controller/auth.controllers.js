@@ -114,38 +114,6 @@ export const verifyEmail = async (req, res) => {
     }
 }
 
-export const resendOtp = async (req, res) => {
-    try {
-        // Get the authenticated user from req.user
-        const user = req.user;
-
-        if (!user) {
-            return res.status(401).json({ success: false, message: "User not authenticated" });
-        }
-
-        if (user.isVerified) {
-            return res.status(400).json({ success: false, message: "User is already verified" });
-        }
-
-        // Generate a new verification token
-        const newVerificationToken = Math.floor(100000 + Math.random() * 900000).toString();
-        user.verificationToken = newVerificationToken;
-        user.verificationTokenExpiresAt = Date.now() + 24 * 60 * 60 * 1000; // 24 hours
-
-        await user.save();
-
-        // Send the new OTP via email
-        SendOtpEmail(user.email, newVerificationToken, user.username);
-
-        res.status(200).json({
-            success: true,
-            message: "New OTP sent successfully",
-        });
-    } catch (error) {
-        // console.log("Error in resendOtp:", error.message);
-        res.status(500).json({ success: false, message: "Something went wrong", error: error.message });
-    }
-};
 
 export const forgetPassword = async (req, res) => {
     const { email } = req.body
