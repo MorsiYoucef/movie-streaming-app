@@ -18,8 +18,7 @@ const SigupPage = () => {
 		e.preventDefault()
 		try {
 			signup({ email, username, password })
-			navigate('/verify-email')
-			
+			navigate('/verify-email')		
 		} catch (error) {
 			toast.error(error.message)
 		}

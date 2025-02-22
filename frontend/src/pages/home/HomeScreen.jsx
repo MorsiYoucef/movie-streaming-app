@@ -33,8 +33,7 @@ function HomeScreen() {
 		)}
         <img src={ORIGINAL_IMG_BASE_URL + trendingContent?.backdrop_path} 
 		alt="hero img" 
-		className=" absolute top-0 left-0 w-full h-full -z-50" 
-		aria-hidden='true' 
+		className=" absolute top-0 left-0 w-full h-full object-cover -z-50" 
 		onLoad={() => setImageLoading(false)}
 		/>
 

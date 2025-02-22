@@ -15,7 +15,7 @@ import { Loader } from "lucide-react";
 import NotFoundPage from './pages/404'
 
 function App() {
-  const { authCheck, isCheckingAuth, user } = useAuthStore()
+  const { authCheck, isCheckingAuth, user, isAuthenticated } = useAuthStore()
 
   useEffect (()=>{
     authCheck()
