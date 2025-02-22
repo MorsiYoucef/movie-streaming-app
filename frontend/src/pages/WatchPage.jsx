@@ -10,7 +10,7 @@ import { ORIGINAL_IMG_BASE_URL, SMALL_IMG_BASE_URL } from "../utils/constants";
 import { formatReleaseDate } from "../utils/dateFunction";
 
 function WatchPage() {
-  const { id}  = useParams()
+  const { id }  = useParams()
   const [ trailers, setTrailers] = useState([]);
   const [ currentTrailerIdx, setCurrentTrailerIdx ] = useState(0);
   const [ loading, setLoading ] = useState(true);
@@ -110,7 +110,7 @@ function WatchPage() {
 
   return (
     <div className='bg-black min-h-screen text-white'>
-			<div className='mx-auto container px-4 py-8 h-full'>
+			<div className='mx-auto container px-4 py-4 h-full'>
 				<Navbar />
 
 				{trailers.length > 0 && (

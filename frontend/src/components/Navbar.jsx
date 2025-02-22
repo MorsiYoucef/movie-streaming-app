@@ -33,7 +33,7 @@ function Navbar() {
             </div>
 
             <div className='flex gap-2 items-center z-50'>
-				<Link to={"/history"}>
+				<Link to={"/search"}>
 					<Search className='size-6 cursor-pointer' />
 				</Link>
 				<img src={user.image} alt='Avatar' className='h-8 rounded cursor-pointer' />
