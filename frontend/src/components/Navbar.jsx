@@ -45,7 +45,7 @@ function Navbar() {
 
             {isMobileMenuOpen && (
                 <div className='w-full sm:hidden mt-4 z-50 bg-black border rounded border-gray-800'>
-                <Link to={"/"} className='block hover:underline p-2' onClick={handleToggleMobileMenu}>
+                <Link to={"/"} className='block hover:underline p-2' onClick={handleToggleMobileMenu} >
                     Movies
                 </Link>
                 <Link to={"/"} className='block hover:underline p-2' onClick={handleToggleMobileMenu}>

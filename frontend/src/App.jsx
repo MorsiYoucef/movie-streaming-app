@@ -12,6 +12,7 @@ import WatchPage from './pages/WatchPage'
 import { useAuthStore } from './store/authUser'
 import { useEffect } from 'react'
 import { Loader } from "lucide-react";
+import NotFoundPage from './pages/404'
 
 function App() {
   const { authCheck, isCheckingAuth, user } = useAuthStore()
@@ -42,6 +43,7 @@ function App() {
         <Route path='/watch/:id' element={user ? <WatchPage /> : <Navigate to={"/"} />} />
         <Route path='/search' element={user ? <SearchPage /> : <Navigate to={"/"} />} />
         <Route path='/history' element={user ? <HistoryPage /> : <Navigate to={"/"} />} />
+        <Route path='/*' element={<NotFoundPage />} />
       </Routes>
       <Footer />
       <Toaster />
