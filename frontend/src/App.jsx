@@ -15,13 +15,14 @@ import { Loader } from "lucide-react";
 import NotFoundPage from './pages/404'
 
 function App() {
-  const { authCheck, isCheckingAuth, user, isAuthenticated } = useAuthStore()
+  const { authCheck, isCheckingAuth, user } = useAuthStore()
 
   useEffect (()=>{
     authCheck()
   },[authCheck])
 
   console.log("is check auth",isCheckingAuth);
+
 
   if (isCheckingAuth) {
 		return (

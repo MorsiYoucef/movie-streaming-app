@@ -110,7 +110,7 @@ function WatchPage() {
 
   return (
     <div className='bg-black min-h-screen text-white'>
-			<div className='mx-auto container px-4 py-4 h-full'>
+			<div className='mx-auto container px-4 h-full'>
 				<Navbar />
 
 				{trailers.length > 0 && (
