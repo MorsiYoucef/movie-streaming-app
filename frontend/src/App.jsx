@@ -21,7 +21,7 @@ function App() {
     authCheck()
   },[authCheck])
 
-  console.log("is check auth",isCheckingAuth);
+  // console.log("is check auth",isCheckingAuth);
 
 
   if (isCheckingAuth) {

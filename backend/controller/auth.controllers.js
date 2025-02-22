@@ -142,7 +142,7 @@ export const resendOtp = async (req, res) => {
             message: "New OTP sent successfully",
         });
     } catch (error) {
-        console.log("Error in resendOtp:", error.message);
+        // console.log("Error in resendOtp:", error.message);
         res.status(500).json({ success: false, message: "Something went wrong", error: error.message });
     }
 };
@@ -169,7 +169,7 @@ export const forgetPassword = async (req, res) => {
         res.status(200).json({ success: true, message: "Password reset successful" });
 
     } catch (error) {
-        console.log("Error in resetPassword ", error);
+        // console.log("Error in resetPassword ", error);
         res.status(400).json({ success: false, message: error.message });
 
     }
@@ -194,7 +194,7 @@ export const resetPassword = async (req, res) => {
 
         res.status(200).json({ success: true, message: "Password reset successful" });
     } catch (error) {
-        console.log("Error in resetPassword ", error);
+        // console.log("Error in resetPassword ", error);
         res.status(400).json({ success: false, message: error.message });
     }
 

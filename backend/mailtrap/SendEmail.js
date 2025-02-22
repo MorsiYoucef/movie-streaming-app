@@ -16,9 +16,9 @@ export const SendOtpEmail = async (recipientEmail, otpCode,name) => {
     };
 
     try {
-        console.log('Attempting to send email...');
+        // console.log('Attempting to send email...');
         const info = await transporter.sendMail(mailOptions);
-        console.log('Email sent successfully:', info);
+        // console.log('Email sent successfully:', info);
     } catch (emailError) {
         console.error('Error sending email:', emailError);
         // We'll still continue with the registration even if email fails
@@ -39,11 +39,11 @@ export const sendPasswordResetEmail = async (email, resetURL) => {
     };
 
     try {
-        console.log('Attempting to send email...');
+        // console.log('Attempting to send email...');
         const info = await transporter.sendMail(mailOptions);
         console.log('Email sent successfully:', info);
     } catch (emailError) {
-        console.error('Error sending email:', emailError.message);
+        // console.error('Error sending email:', emailError.message);
         // We'll still continue with the registration even if email fails
     }
 

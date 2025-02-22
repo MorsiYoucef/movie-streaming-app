@@ -12,7 +12,7 @@ function Navbar() {
     const handleToggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen)
     }
-    console.log(" contentTYpe: ",contentType)
+    // console.log(" contentTYpe: ",contentType)
     return (
         <header className='max-w-6xl mx-auto flex flex-wrap items-center justify-between h-20'>
             <div className='flex items-center gap-10 z-50'>

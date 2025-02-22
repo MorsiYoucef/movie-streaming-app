@@ -14,7 +14,7 @@ export const useAuthStore = create((set) =>({
         set({isSigningUp: true})
         try {
             const response = await axios.post("/api/v1/auth/signup", credentials);
-            console.log(response)
+            // console.log(response)
             set({ isSigningUp: false}) 
             toast.success("Account created succesfully, now verify your account")
         } catch (error) {
