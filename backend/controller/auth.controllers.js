@@ -2,7 +2,7 @@ import bcrypt from 'bcryptjs';
 import dotenv from 'dotenv'
 import { User } from '../models/User.js'
 import { generateTokenAndSetCookie } from '../utils/generateTokenAndSetCookie.js';
-import { SendOtpEmail, sendPasswordResetEmail } from '../mailtrap/sendEmail.js';
+import { SendOtpEmail, sendPasswordResetEmail } from '../mailtrap/SendEmail.js';
 import crypto from 'crypto'
 
 dotenv.config()
