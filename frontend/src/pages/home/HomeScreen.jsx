@@ -11,9 +11,10 @@ import MovieSlider from "@/components/MovieSlider";
 function HomeScreen() {
   const { trendingContent } = useGetTrendingContent()
   const { contentType } = useContentStore()
-  console.log("trendingContent", trendingContent)
+  const [ imgLoading, setImageLoading] = useState(true)
+  
 
-  //TODO add a loading spinner
+  
   if (!trendingContent)
 		return (
 			<div className='h-screen text-white relative'>
@@ -26,7 +27,16 @@ function HomeScreen() {
     <>
       <div className='relative h-screen text-white'>
         <Navbar />
-        <img src={ORIGINAL_IMG_BASE_URL + trendingContent?.backdrop_path} alt="hero img" className=" absolute top-0 left-0 w-full h-full -z-50" aria-hidden='true'/>
+		{/* COOL OPTIMIZATION */}
+		{imgLoading && (
+				<div className='absolute top-0 left-0 w-full h-full bg-black/70 flex items-center justify-center -z-10 shimmer' />
+		)}
+        <img src={ORIGINAL_IMG_BASE_URL + trendingContent?.backdrop_path} 
+		alt="hero img" 
+		className=" absolute top-0 left-0 w-full h-full -z-50" 
+		aria-hidden='true' 
+		onLoad={() => setImageLoading(false)}
+		/>
 
         <div className=" absolute top-0 left-0 w-full h-full bg-black/50 -z-50" aria-hidden="true" />
 

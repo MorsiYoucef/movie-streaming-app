@@ -39,7 +39,7 @@ function MovieSlider({ category }) {
       onMouseLeave={() => setShowArrows(false)}
     >
       <h2 className='mb-4 text-2xl font-bold'>{formattedCategoryName} {formattedContentType}</h2>
-      <div className=" flex space-x-4 overflow-x-scroll">
+      <div className=" flex space-x-4 overflow-x-scroll scrollbar-hide" ref={sliderRef}>
         {content.map((item) => (
           <Link to={`/watch/${item.id}`} className='min-w-[250px] relative group' key={item.id}>
             <div className='rounded-lg overflow-hidden'>
@@ -57,7 +57,7 @@ function MovieSlider({ category }) {
 				<>
 					<button
 						className='absolute top-1/2 -translate-y-1/2 left-5 md:left-24 flex items-center justify-center
-            size-12 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75 text-white z-10
+            size-12 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75 text-white z-10 cursor-pointer
             '
 						onClick={scrollLeft}
 					>
@@ -66,7 +66,7 @@ function MovieSlider({ category }) {
 
 					<button
 						className='absolute top-1/2 -translate-y-1/2 right-5 md:right-24 flex items-center justify-center
-            size-12 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75 text-white z-10
+            size-12 rounded-full bg-black bg-opacity-50 hover:bg-opacity-75 text-white z-10 cursor-pointer
             '
 						onClick={scrollRight}
 					>

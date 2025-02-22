@@ -6,6 +6,7 @@ import SigupPage from './pages/SigupPage'
 import { Toaster } from 'react-hot-toast'
 import Footer from './components/Footer'
 import EmailVerification from './pages/EmailVerification'
+import WatchPage from './pages/WatchPage'
 import { useAuthStore } from './store/authUser'
 import { useEffect } from 'react'
 import { Loader } from "lucide-react";
@@ -36,6 +37,7 @@ function App() {
         <Route path="/login" element={!user ? <LoginPage /> : <Navigate to={"/"} />} />
         <Route path="/signup" element={!user ? <SigupPage /> : <Navigate to={"/"} />} />
         <Route path='/verify-email' element={!user ? <EmailVerification /> : <Navigate to={"/"} />} />
+        <Route path='/watch/:id' element={user ? <WatchPage /> : <Navigate to={"/"} />} />
       </Routes>
       <Footer />
       <Toaster />
