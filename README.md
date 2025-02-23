@@ -18,3 +18,25 @@ Responsive Design: Optimized for both desktop and mobile devices.
 
 Fast Performance: Built with Vite for lightning-fast frontend performance.
 
+## Tech Stack 🛠️
+### Frontend
+React: A JavaScript library for building user interfaces.
+
+Vite: A fast build tool for modern web development.
+
+React Router: For client-side routing.
+
+Axios: For making HTTP requests to the backend.
+
+Tailwind CSS: For styling and responsive design.
+
+### Backend
+Express.js: A Node.js framework for building the backend API.
+
+JWT (JSON Web Tokens): For secure user authentication.
+
+MongoDB: A NoSQL database for storing user data and content.
+
+Bcrypt: For hashing and securing user passwords.
+
+Nodemailer: For sending email notifications (e.g., OTP, password reset).
